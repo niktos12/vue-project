@@ -30,7 +30,7 @@ export default {
     },
     computed: {
         processImageSrc() {
-            return this.isMobile ? 'src/assets/Frame 830.svg' : 'src/assets/plan.svg';
+            return this.isMobile ? 'src/assets/img/Frame 830.svg' : 'src/assets/img/plan.svg';
         },
     },
     mounted() {
