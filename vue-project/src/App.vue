@@ -4,7 +4,7 @@
     <OverlayEffect :isMenuOpen="isMenuOpen" :toggleMenu="toggleMenu" />
     <main>
       <Header :isMenuOpen="isMenuOpen" @toggle-menu="toggleMenu" />
-      <Presentation  />
+      <Presentation />
       <Advantages />
       <WhyTG />
       <Experts />
@@ -53,7 +53,6 @@ export default {
 main {
   display: flex;
   flex-direction: column;
-
   gap: 16px;
 }
 
@@ -61,7 +60,7 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 480px) {
   #app {
     padding: 0.5rem;
   }
