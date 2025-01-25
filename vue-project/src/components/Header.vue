@@ -7,7 +7,7 @@
             <a href="#adv" class="header-nav" @click="closeMenu">Преимущества</a>
             <a href="#howIt" class="header-nav" @click="closeMenu">Как это работает</a>
         </div>
-        <button class="header-btn">Оставить заявку</button>
+        <a class="header-btn" href="#form">Оставить заявку</a>
         <div class="adaptive-nav">
             <button class="burger" :class="{ 'burger-active': isMenuOpen }" @click="toggleMenu">
                 <span class="burger-line"></span>
