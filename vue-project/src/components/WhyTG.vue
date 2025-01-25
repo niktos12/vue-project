@@ -1,7 +1,7 @@
 <template>
     <div class="why-tg-main" id="whyTG">
         <div class="left-block">
-            <img src="../assets/tg.webp" class="tg-webp" />
+            <img src="../assets/img/tg.webp" class="tg-webp" />
         </div>
         <div class="right-block">
             <h2 class="section-title">Почему Telegram?</h2>

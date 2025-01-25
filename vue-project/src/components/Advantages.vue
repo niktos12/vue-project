@@ -2,28 +2,28 @@
     <div class="adv-main" id="adv">
         <div class="adv-scroll-container">
             <div class="adv-div">
-                <img src="../assets/Frame 782.svg" class="adv-img" />
+                <img src="../assets/img/Frame 782.svg" class="adv-img" />
                 <p class="adv-p">
                     <span class="adv-span">Подходит для любой ниши: </span>
                     магазины, доставка, образование, недвижимость и др.
                 </p>
             </div>
             <div class="adv-div">
-                <img src="../assets/Frame 783.svg" class="adv-img" />
+                <img src="../assets/img/Frame 783.svg" class="adv-img" />
                 <p class="adv-p">
                     <span class="adv-span">Уведомления нового поколения: </span>
                     замените устаревшие SMS на интерактивные сообщения.
                 </p>
             </div>
             <div class="adv-div">
-                <img src="../assets/Frame 785.svg" class="adv-img" />
+                <img src="../assets/img/Frame 785.svg" class="adv-img" />
                 <p class="adv-p">
                     <span class="adv-span">Цифровизация и автоматизация: </span>
                     управляйте продажами и коммуникацией.
                 </p>
             </div>
             <div class="adv-div">
-                <img src="../assets/Frame 784.svg" class="adv-img" />
+                <img src="../assets/img/Frame 784.svg" class="adv-img" />
                 <p class="adv-p">
                     <span class="adv-span">Геймификация: </span>
                     вовлекайте клиентов через акции и розыгрыши.

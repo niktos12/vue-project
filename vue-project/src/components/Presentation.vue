@@ -13,7 +13,7 @@
                 </a>
             </div>
             <video class="pres-video" autoplay loop muted>
-                <source src="../assets/IMG_7319.webm" type="video/webm">
+                <source src="../assets/img/IMG_7319.webm" type="video/webm">
             </video>
         </div>
     </div>
