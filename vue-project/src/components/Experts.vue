@@ -8,7 +8,7 @@
                     опыта
                 </p>
             </div>
-            <img src="../assets/Member.webp" class="exp-member" />
+            <img src="../assets/img/Member.webp" class="exp-member" />
         </div>
         <div class="swiper-container">
             <swiper :modules="modules" :loop="swiperOptions.loop" :slides-per-view="swiperOptions.slidesPerView"
@@ -16,24 +16,24 @@
                 :centered-slides="swiperOptions.centeredSlides" :grab-cursor="true" :autoplay="swiperOptions.autoplay"
                 :navigation="swiperOptions.navigation" :breakpoints="swiperOptions.breakpoints">
                 <swiper-slide>
-                    <img src="../assets/Slide1.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide1.webp" class="slide-picture" />
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../assets/Slide2.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide2.webp" class="slide-picture" />
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../assets/Slide3.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide3.webp" class="slide-picture" />
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../assets/Slide1.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide1.webp" class="slide-picture" />
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../assets/Slide2.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide2.webp" class="slide-picture" />
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../assets/Slide3.webp" class="slide-picture" />
+                    <img src="../assets/img/Slide3.webp" class="slide-picture" />
                 </swiper-slide>
-                <div class="swiper-button-next"><img src="../assets/Vector.svg" /></div>
+                <div class="swiper-button-next"><img src="../assets/img/Vector.svg" /></div>
             </swiper>
         </div>
     </div>
