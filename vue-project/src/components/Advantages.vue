@@ -81,70 +81,17 @@
     gap: 1rem;
 }
 
-@media (max-width: 1024px) {
-    .adv-main {
-        padding: 1.5rem;
-    }
-
-    .adv-scroll-container {
-        gap: 1.5rem;
-    }
-
-    .adv-p {
-        font-size: 1.25rem;
-    }
-
-    .adv-img {
-        width: 8rem;
-        height: 8rem;
-    }
-
-    .adv-span {
-        font-size: 1.25rem;
-    }
-
-    .adv-div {
-        width: 20rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .adv-main {
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .adv-scroll-container {
-        gap: 1rem;
-    }
-
-    .adv-p {
-        font-size: 1rem;
-    }
-
-    .adv-img {
-        width: 6rem;
-        height: 6rem;
-    }
-
-    .adv-span {
-        font-size: 1rem;
-    }
-
-    .adv-div {
-        width: 18rem;
-    }
-}
-
 @media (max-width: 480px) {
     .adv-main {
         padding: 1rem;
+        gap: 1rem;
     }
 
     .adv-scroll-container {
         overflow-x: auto;
         justify-content: normal;
         scrollbar-width: thin;
+        gap: 1rem;
     }
 
     .adv-p {

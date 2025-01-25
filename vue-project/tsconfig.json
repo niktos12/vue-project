@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-      "module": "ESNext",
-      "moduleResolution": "Node",
-      "baseUrl": ".",
-      "paths": {
-          "@/*": ["src/*"]
-      },
-      "types": ["vite/client"]
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"],
+    "lib": ["ES2015", "DOM"]
   },
   "include": ["src/**/*.ts", "src/**/*.vue"]
 }

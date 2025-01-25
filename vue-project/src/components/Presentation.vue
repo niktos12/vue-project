@@ -1,5 +1,5 @@
 <template>
-    <div class="pres-main">
+    <div class="pres-main" id="pres">
         <div class="pres">
             <div class="left-block">
                 <h1 class="left-block-h1">
@@ -91,50 +91,6 @@
     color: #212121;
 }
 
-@media (max-width: 1024px) {
-    .pres {
-        gap: 1.5rem;
-    }
-
-    .left-block-h1 {
-        font-size: 3rem;
-    }
-
-    .left-block-p {
-        font-size: 1.25rem;
-    }
-
-    .btn-pres {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .pres {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .pres-video {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .left-block-h1 {
-        font-size: 2.5rem;
-    }
-
-    .left-block-p {
-        font-size: 2rem;
-    }
-
-    .btn-pres {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-}
-
 @media (max-width: 480px) {
     .left-block-h1 {
         font-size: 3rem;
@@ -151,6 +107,8 @@
         line-height: 2.1rem;
     }
     .pres{
+        flex-direction: column;
+        gap: 1rem;
         padding-top: 0rem !important;
     }
     .pres-main {

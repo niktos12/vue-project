@@ -1,6 +1,6 @@
 <template>
     <header :class="{ 'scrolled-header': isScrolled }">
-        <h1 class="logo">Mini Apps</h1>
+        <a class="logo" href="#">Mini Apps</a>
         <div class="div-nav" :class="{ 'nav-active': isMenuOpen }">
             <a href="#whyTG" class="header-nav" @click="closeMenu">Почему Telegram?</a>
             <a href="#experts" class="header-nav" @click="closeMenu">Наши услуги</a>
@@ -152,6 +152,7 @@ header {
         justify-content: space-between;
         top: 1rem;
     }
+
     .div-nav {
         display: flex;
         position: absolute;
@@ -168,6 +169,7 @@ header {
         z-index: 4;
         border-radius: 1rem;
     }
+
     .div-nav.nav-active {
         transform: translateY(0);
         opacity: 1;

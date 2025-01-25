@@ -192,60 +192,29 @@ export default {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .exp-main {
-        flex-direction: column;
-    }
-
-    .right-block {
-        width: 100%;
-        padding: 32px;
-    }
-
-    .left-block {
-        width: 100%;
-        height: auto;
-        padding: 32px;
-        max-width: none;
-    }
-
-    .slide-picture {
-        height: 300px;
-        width: 200px;
-    }
-
-    .swiper-container {
-        margin: 0;
-    }
-
-    .exp-h1 {
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    .exp-p {
-        font-size: 16px;
-        line-height: 24px;
-        margin-bottom: 72px;
-    }
-
-    .swiper-slide {
-        width: fit-content;
-    }
-}
-
 @media (max-width: 480px) {
     .exp-main {
         padding: 0.5rem;
+        flex-direction: column;
     }
 
     .swiper-button-next {
         display: flex;
     }
 
+    .right-block {
+        width: 100%;
+        padding: 2rem;
+    }
+
     .swiper-container {
         background-color: transparent;
+        margin: 0;
         padding: 0;
+    }
+
+    .swiper-slide {
+        width: fit-content;
     }
 
     .exp-h1 {
@@ -256,30 +225,36 @@ export default {
     .exp-p {
         font-size: 1rem;
         line-height: 1.4rem;
+        margin-bottom: 72px;
     }
-    .exp-div{
+
+    .exp-div {
         gap: 0.875rem;
     }
+
     .exp-member {
         width: 12rem;
         height: auto;
     }
 
     .left-block {
-        padding: 24px;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        padding: 1.5rem;
     }
 
     .swiper-slide {
-        width: 300px !important;
-        border-radius: 24px;
+        width: 18.75rem !important;
+        border-radius: 1.5rem;
         background-color: red;
     }
 
     .slide-picture {
         box-sizing: border-box;
-        padding: 42px;
+        padding: 2.625rem;
         height: auto;
-        width: 300px;
+        width: 18.75rem;
 
     }
 }

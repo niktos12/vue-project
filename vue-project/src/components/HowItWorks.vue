@@ -117,80 +117,20 @@ export default {
     align-self: center;
 }
 
-@media (max-width: 1024px) {
-    .main-div {
-        padding: 1.5rem 2rem;
-        gap: 1.5rem;
-    }
-
+@media (max-width: 480px) {
     .h1-how-works {
-        font-size: 3rem;
-        line-height: 3.5rem;
-    }
-
-    .p-process {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .h1-card {
-        font-size: 1.75rem;
+        font-size: 2rem;
         line-height: 2.2rem;
     }
 
-    .p-card {
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
     .main-div {
         padding: 1rem 1.5rem;
         gap: 1rem;
     }
 
-    .h1-how-works {
-        font-size: 2.5rem;
-        line-height: 3rem;
-    }
-
-    .p-process {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-    }
-
     .desc-div {
         flex-direction: column;
         align-items: center;
-    }
-
-    .card-div {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .h1-card {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-
-    .p-card {
-        font-size: 1rem;
-        line-height: 1.25rem;
-    }
-
-    .process-img {
-        width: 100%;
-        height: auto;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .h1-how-works {
-        font-size: 2rem;
-        line-height: 2.2rem;
     }
 
     .p-process {

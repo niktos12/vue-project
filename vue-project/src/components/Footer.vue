@@ -66,9 +66,14 @@ export default {
                 alert('Форма успешно отправлена!');
             } catch (error) {
                 if (error instanceof z.ZodError) {
-                    errors.value = error.formErrors.fieldErrors;
-                }
-            }
+                    errors.value = Object.fromEntries(
+                        Object.entries(error.formErrors.fieldErrors).map(([key, value]) => [
+                            key,
+                            value ? value.join(", ") : "",
+                        ])
+                    );
+                };
+            };
         };
 
         return {
@@ -214,64 +219,11 @@ footer {
     display: block;
 }
 
-@media (max-width: 1200px) {
-    footer {
-        gap: 4rem;
-        padding: 4rem;
-        flex-direction: column;
-    }
-
-    .new-level {
-        width: 100%;
-    }
-
-    .half-form-group input,
-    .form-group input {
-        width: 100%;
-    }
-
-    .inputs-group {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem;
-    }
-
-    .h1-new-level {
-        font-size: 2.5rem;
-        line-height: 3rem;
-    }
-
-    .p-new-level {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-    }
-
-    .half-form-group input,
-    .form-group input {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        padding: 1.5rem 2rem;
-    }
-
-    .submit-button {
-        font-size: 1.25rem;
-    }
-
-    .form-notice {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-}
 
 @media (max-width: 480px) {
     footer {
         padding: 1.5rem;
+        flex-direction: column;
     }
 
     .h1-new-level {
@@ -296,11 +248,18 @@ footer {
 
     .half-form-group input,
     .form-group input {
-        font-size: 1rem;
+        padding: 1.5rem 2rem;
+        width: 100%;
+        font-size: 1.25rem;
         line-height: 1.5rem;
     }
 
+    .inputs-group {
+        flex-direction: column;
+    }
+
     .submit-button {
+        padding: 1.5rem 2rem;
         font-size: 1rem;
     }
 

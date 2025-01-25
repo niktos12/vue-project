@@ -122,69 +122,19 @@
     word-break: normal;
 }
 
-@media (max-width: 1024px) {
-    .why-tg-main {
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-
+@media (max-width: 480px) {
     .section-title {
-        font-size: 2.5rem;
-    }
-
-    .benefits {
-        margin-bottom: 1.5rem;
-    }
-
-    .benefit-number {
-        font-size: 1.25rem;
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .benefit-text {
-        font-size: 1.25rem;
-    }
-
-    .global-text {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .why-tg-main {
-        flex-direction: column;
-        gap: 1rem;
+        font-size: 2rem;
     }
 
     .tg-webp {
         max-width: 100%;
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .benefit-number {
-        font-size: 1rem;
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    .benefit-text {
-        font-size: 1rem;
-    }
-
-    .global-text {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 2rem;
+    .why-tg-main {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
     }
 
     .benefit-item {
