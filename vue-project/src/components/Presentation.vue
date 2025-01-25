@@ -32,6 +32,7 @@
 .pres {
     display: flex;
     flex-direction: row;
+    padding-top: 5rem !important;
     gap: 2rem;
     align-items: center;
     width: 100%;
@@ -45,7 +46,7 @@
     background-color: #2196F3;
     color: #FFFFFF;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -68,23 +69,24 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     flex: 1;
 }
 
 .left-block-p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     word-break: normal;
+    line-height: 2.8rem;
     color: #212121;
 }
 
 .left-block-h1 {
-    font-size: 4rem;
+    font-size: 6rem;
+    line-height: 6rem;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 1.5rem;
     word-break: normal;
     color: #212121;
 }
@@ -136,6 +138,7 @@
 @media (max-width: 480px) {
     .left-block-h1 {
         font-size: 3rem;
+        line-height: 3rem;
     }
 
     .pres-video {
@@ -145,15 +148,20 @@
 
     .left-block-p {
         font-size: 1.5rem;
+        line-height: 2.1rem;
     }
-
+    .pres{
+        padding-top: 0rem !important;
+    }
     .pres-main {
+        padding-top: 7rem !important;
         padding: 0.5rem;
     }
 
     .btn-pres {
-        margin-top: 2rem;
-        padding: 0.875rem 1.5rem;
+        margin-top: 1rem;
+        line-height: 1.225rem;
+        padding: 0.875rem 1.625rem;
         font-size: 0.875rem;
     }
 }

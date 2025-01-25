@@ -53,16 +53,16 @@ export default {
         const errors = ref({});
 
         const schema = z.object({
-            firstName: z.string().min(1, { message: 'Имя обязательно' }),
-            lastName: z.string().min(1, { message: 'Фамилия обязательна' }),
-            phone: z.string().min(1, { message: 'Номер телефона обязателен' }).regex(/^\d+$/, { message: 'Номер телефона должен содержать только цифры' }),
+            firstName: z.string().min(1, 'Имя обязательно'),
+            lastName: z.string().min(1, 'Фамилия обязательна'),
+            phone: z.string().min(1, 'Номер телефона обязателен').regex(/^\d+$/, 'Номер телефона должен содержать только цифры').max(11, 'Слишком длинный номер телефона'),
             business: z.string().optional(),
         });
 
         const submitForm = () => {
             try {
                 schema.parse(formData.value);
-                errors.value = {}; 
+                errors.value = {};
                 alert('Форма успешно отправлена!');
             } catch (error) {
                 if (error instanceof z.ZodError) {
@@ -276,7 +276,7 @@ footer {
 
     .h1-new-level {
         font-size: 2rem;
-        line-height: 2.5rem;
+        line-height: 2.2rem;
     }
 
     .p-new-level {
@@ -289,7 +289,9 @@ footer {
     }
 
     .privacy {
-        margin-top: 8px;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .half-form-group input,
@@ -303,8 +305,8 @@ footer {
     }
 
     .form-notice {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.4rem;
     }
 }
 </style>

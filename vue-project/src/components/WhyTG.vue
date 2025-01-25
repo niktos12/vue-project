@@ -184,7 +184,7 @@
 
 @media (max-width: 480px) {
     .section-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .benefit-item {
@@ -197,18 +197,22 @@
     }
 
     .benefit-number {
-        font-size: 0.875rem;
-        width: 1.25rem;
-        height: 1.25rem;
+        font-size: 1rem;
+        width: 1.875rem;
+        height: 1.875rem;
     }
 
     .benefit-text {
-        font-size: 0.875rem;
+        font-size: 1rem;
+    }
+
+    .global-div {
+        flex-direction: column;
     }
 
     .global-text {
-        font-size: 0.75rem;
-        line-height: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.225rem;
     }
 }
 </style>

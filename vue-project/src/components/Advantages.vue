@@ -148,16 +148,16 @@
     }
 
     .adv-p {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
 
     .adv-img {
-        width: 4rem;
-        height: 4rem;
+        width: 7.5rem;
+        height: 7.5rem;
     }
 
     .adv-span {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
 
     .adv-div {

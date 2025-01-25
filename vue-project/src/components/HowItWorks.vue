@@ -190,28 +190,32 @@ export default {
 @media (max-width: 480px) {
     .h1-how-works {
         font-size: 2rem;
-        line-height: 2.5rem;
+        line-height: 2.2rem;
     }
 
     .p-process {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        text-align: left;
+        margin-bottom: 4.5rem;
+        margin-top: 1rem;
     }
 
     .h1-card {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
+        font-size: 1.5rem;
+        line-height: 1.65rem;
     }
 
     .p-card {
-        font-size: 0.875rem;
-        line-height: 1rem;
+        font-size: 1rem;
+        line-height: 1.4rem;
     }
 
     .process-img {
         width: 100%;
         height: auto;
         max-width: 300px;
+        margin-bottom: 2rem;
     }
 }
 </style>

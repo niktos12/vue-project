@@ -249,15 +249,17 @@ export default {
     }
 
     .exp-h1 {
-        font-size: 2rem;
-        line-height: 2.5rem;
+        font-size: 1.5rem;
+        line-height: 2.1rem;
     }
 
     .exp-p {
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: 1.4rem;
     }
-
+    .exp-div{
+        gap: 0.875rem;
+    }
     .exp-member {
         width: 12rem;
         height: auto;

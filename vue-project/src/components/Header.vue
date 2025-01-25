@@ -1,4 +1,3 @@
-сделай так, чтобы когда у меня был статик позишион, то у меня нормально открывалось и отображалось бургер меню
 <template>
     <header :class="{ 'scrolled-header': isScrolled }">
         <h1 class="logo">Mini Apps</h1>
@@ -66,10 +65,13 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
-    padding: 1rem 2rem;
+    padding-left: 2rem !important;
+    padding: 0rem;
     border-radius: 999px;
-    position: sticky;
-    top: 1rem;
+    position: absolute;
+    width: 93.5%;
+    align-self: center;
+    top: 3rem;
     z-index: 3;
     transition: background-color 0.3s ease-in-out;
 }
@@ -130,20 +132,26 @@ header {
     cursor: pointer;
 }
 
+.scrolled-header {
+    background-color: #f0f0f0;
+    position: fixed;
+}
+
 .burger-line {
     width: 2rem;
-    height: 0.25rem;
+    height: 3px;
     background-color: #21212152;
     transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 1rem;
+        padding: 0px;
+        padding-left: 1rem;
         flex-direction: row;
         justify-content: space-between;
+        top: 1rem;
     }
-
     .div-nav {
         display: flex;
         position: absolute;
@@ -160,11 +168,6 @@ header {
         z-index: 4;
         border-radius: 1rem;
     }
-
-    .scrolled-header {
-        background-color: #f0f0f0;
-    }
-
     .div-nav.nav-active {
         transform: translateY(0);
         opacity: 1;
@@ -217,10 +220,12 @@ header {
     }
 
     .burger-active .burger-line {
+        width: auto;
         background-color: #212121;
     }
 
     .burger-active .burger-line:nth-child(1) {
+        width: 18px;
         transform: rotate(45deg) translate(0.5rem, 0.5rem);
     }
 
@@ -229,7 +234,8 @@ header {
     }
 
     .burger-active .burger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(0.55rem, -0.5rem);
+        width: 18px;
+        transform: rotate(-45deg) translate(0.5rem, -0.46rem);
     }
 }
 </style>
