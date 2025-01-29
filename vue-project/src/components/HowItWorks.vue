@@ -1,161 +1,171 @@
 <template>
-    <div class="main-div" id="howIt">
-        <h1 class="h1-how-works">Как это работает?</h1>
-        <div class="desc-div">
-            <div class="card-div">
-                <h1 class="h1-card">Анализируем</h1>
-                <p class="p-card">Исследуем ваш бизнес и подбираем решение</p>
-            </div>
-            <div class="card-div">
-                <h1 class="h1-card">Создаем</h1>
-                <p class="p-card">Настраиваем системы для сбора клиентской информации</p>
-            </div>
-            <div class="card-div">
-                <h1 class="h1-card">Контролируем</h1>
-                <p class="p-card">А вы получаете управление каждым этапом — от первого интереса клиента до покупки</p>
-            </div>
-        </div>
-        <p class="p-process">Вы видите все процессы в реальном времени и получаете полное понимание, как клиенты
-            взаимодействуют с вашим продуктом</p>
-        <img :src="processImageSrc" class="process-img" />
+  <div class="main-div" id="howIt">
+    <h1 class="h1-how-works">Как это работает?</h1>
+    <div class="desc-div">
+      <div class="card-div">
+        <h1 class="h1-card">Анализируем</h1>
+        <p class="p-card">Исследуем ваш бизнес и подбираем решение</p>
+      </div>
+      <div class="card-div">
+        <h1 class="h1-card">Создаем</h1>
+        <p class="p-card">
+          Настраиваем системы для сбора клиентской информации
+        </p>
+      </div>
+      <div class="card-div">
+        <h1 class="h1-card">Контролируем</h1>
+        <p class="p-card">
+          А вы получаете управление каждым этапом — от первого интереса клиента
+          до покупки
+        </p>
+      </div>
     </div>
+    <p class="p-process">
+      Вы видите все процессы в реальном времени и получаете полное понимание,
+      как клиенты взаимодействуют с вашим продуктом
+    </p>
+    <img :src="processImageSrc" class="process-img" />
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            isMobile: false,
-        };
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  computed: {
+    processImageSrc() {
+      return this.isMobile
+        ? "src/assets/img/Frame 830.svg"
+        : "src/assets/img/plan.svg";
     },
-    computed: {
-        processImageSrc() {
-            return this.isMobile ? 'src/assets/img/Frame 830.svg' : 'src/assets/img/plan.svg';
-        },
+  },
+  mounted() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.isMobile = window.innerWidth < 768;
     },
-    mounted() {
-        this.handleResize();
-        window.addEventListener('resize', this.handleResize);
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.handleResize);
-    },
-    methods: {
-        handleResize() {
-            this.isMobile = window.innerWidth < 768;
-        },
-    },
+  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/variables.scss";
+@import "../assets/mixins.scss";
+
 .main-div {
-    background-color: #2121210A;
-    border-radius: 32px;
-    padding: 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  @include flex-column;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: $padding-large $padding-xlarge;
+  gap: $padding-large;
 }
 
 .p-process {
-    font-size: 1.75rem;
-    letter-spacing: -0.6px;
-    color: #212121A3;
-    text-align: center;
-    align-self: center;
-    margin-bottom: 2rem;
-    max-width: 920px;
+  font-size: $font-size-large;
+  letter-spacing: -0.6px;
+  color: $text-color-light;
+  text-align: center;
+  align-self: center;
+  margin-top: 2.5rem;
+  margin-bottom: 4.5rem;
+  // max-width: 57.5rem; // 920px -> 57.5rem
 }
 
 .desc-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+  @include flex-row;
+  justify-content: center;
+  gap: $padding-medium;
+  flex-wrap: wrap;
 }
 
 .card-div {
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 464px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  @include card-style;
+  width: 100%;
+  max-width: 29rem; // 464px -> 29rem
+  border-radius: $border-radius-base !important;
+  padding: $padding-xlarge !important;
+  // gap: $padding-small / 2;
 }
 
 .p-card {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    color: #212121;
-    width: 100%;
-    word-break: normal;
-    letter-spacing: -0.6px;
+  font-size: $font-size-medium;
+  line-height: 1.75rem;
+  color: $text-color;
+  width: 100%;
+  word-break: normal;
+  letter-spacing: -0.6px;
 }
 
 .h1-card {
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 2.8rem;
-    color: #212121;
+  font-weight: 500;
+  font-size: $font-size-xlarge;
+  line-height: 2.8rem;
+  color: $text-color;
 }
 
 .h1-how-works {
-    font-weight: 500;
-    font-size: 4rem;
-    line-height: 4.4rem;
-    color: #212121;
-    text-align: center;
+  font-weight: 500;
+  font-size: $font-size-xxlarge;
+  line-height: 4.4rem;
+  color: $text-color;
+  text-align: center;
 }
 
 .process-img {
-    width: 100%;
-    height: auto;
-    align-self: center;
+  width: 100%;
+  height: auto;
+  align-self: center;
+  margin-bottom: 6rem;
 }
 
 @media (max-width: 480px) {
-    .h1-how-works {
-        font-size: 2rem;
-        line-height: 2.2rem;
-    }
+  .h1-how-works {
+    font-size: $font-size-xlarge;
+    line-height: 2.2rem;
+  }
 
-    .main-div {
-        padding: 1rem 1.5rem;
-        gap: 1rem;
-    }
+  .main-div {
+    padding: $padding-large;
+    gap: $padding-medium;
+  }
 
-    .desc-div {
-        flex-direction: column;
-        align-items: center;
-    }
+  .desc-div {
+    @include flex-column;
+    align-items: center;
+  }
 
-    .p-process {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        text-align: left;
-        margin-bottom: 4.5rem;
-        margin-top: 1rem;
-    }
+  .p-process {
+    font-size: $font-size-medium;
+    line-height: 1.75rem;
+    text-align: left;
+    margin-bottom: $padding-xlarge;
+    margin-top: $padding-medium;
+  }
 
-    .h1-card {
-        font-size: 1.5rem;
-        line-height: 1.65rem;
-    }
+  .h1-card {
+    font-size: $font-size-large;
+    line-height: 1.65rem;
+  }
 
-    .p-card {
-        font-size: 1rem;
-        line-height: 1.4rem;
-    }
+  .p-card {
+    font-size: $font-size-medium;
+    line-height: 1.4rem;
+  }
 
-    .process-img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-        margin-bottom: 2rem;
-    }
+  .process-img {
+    width: 100%;
+    height: auto;
+    max-width: 18.75rem; // 300px -> 18.75rem
+    margin-bottom: $padding-large;
+  }
 }
 </style>

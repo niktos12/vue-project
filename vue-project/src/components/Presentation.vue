@@ -1,126 +1,147 @@
 <template>
-    <div class="pres-main" id="pres">
-        <div class="pres">
-            <div class="left-block">
-                <h1 class="left-block-h1">
-                    Треть рынка в один клик!
-                </h1>
-                <p class="left-block-p">
-                    Разработайте Telegram Mini App — будущее мобильной коммерции уже здесь!
-                </p>
-                <a class="btn-pres" href="#form">
-                    Хочу мини-приложение!
-                </a>
-            </div>
-            <video class="pres-video" autoplay loop muted>
-                <source src="../assets/img/IMG_7319.webm" type="video/webm">
-            </video>
-        </div>
+  <div class="pres-main" id="pres">
+    <div class="pres">
+      <div class="left-block">
+        <h1 class="left-block-h1">Треть рынка в один клик!</h1>
+        <p class="left-block-p">
+          Разработайте Telegram Mini App — будущее мобильной коммерции уже
+          здесь!
+        </p>
+        <a class="btn-pres" href="#form"> Хочу мини-приложение! </a>
+      </div>
+      <video class="pres-video" autoplay loop muted>
+        <source src="../assets/img/IMG_7319.webm" type="video/webm" />
+      </video>
     </div>
+  </div>
 </template>
 
-<style scoped>
+<script>
+export default {
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  computed: {
+    processImageSrc() {
+      return this.isMobile
+        ? "src/assets/img/Frame_830.svg"
+        : "src/assets/img/plan.svg";
+    },
+  },
+  mounted() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.isMobile = window.innerWidth < 768;
+    },
+  },
+};
+</script>
+
+<style scoped lang="scss">
+@import "../assets/variables.scss";
+@import "../assets/mixins.scss";
+
 .pres-main {
-    background-color: #2121210A;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
+  @include flex-column;
+  background-color: $background-color;
+  padding: $padding-medium $padding-large;
+  border-radius: $border-radius;
+  gap: $padding-medium;
 }
 
 .pres {
-    display: flex;
-    flex-direction: row;
-    padding-top: 5rem !important;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
+  @include flex-row;
+  padding-top: 5rem;
+  gap: $padding-large;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .btn-pres {
-    padding: 1rem 1.5rem;
-    border: 0;
-    border-radius: 999px;
-    background-color: #2196F3;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-pres:hover {
+  @include button-style;
+  padding: $padding-big $padding-xlarge;
+  background-color: $primary-color;
+  border-radius: $border-radius-full;
+  color: $secondary-color;
+  &:hover {
     background-color: #1976d2;
+  }
 }
 
 .pres-video {
-    border-radius: 1rem;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    flex-shrink: 0;
+  border-radius: $border-radius;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .left-block {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    flex: 1;
+  @include flex-column;
+  justify-content: center;
+  gap: $padding-large;
+  align-items: center;
+  flex: 1;
 }
 
 .left-block-p {
-    font-size: 2rem;
-    text-align: center;
-    word-break: normal;
-    line-height: 2.8rem;
-    color: #212121;
+  font-size: $font-size-xlarge;
+  text-align: center;
+  word-break: normal;
+  line-height: 2.8rem;
+  color: $text-color;
 }
 
 .left-block-h1 {
-    font-size: 6rem;
-    line-height: 6rem;
-    text-align: center;
-    font-weight: 500;
-    word-break: normal;
-    color: #212121;
+  font-size: $font-h1;
+  line-height: 6rem;
+  text-align: center;
+  font-weight: 500;
+  word-break: normal;
+  color: $text-color;
 }
 
 @media (max-width: 480px) {
-    .left-block-h1 {
-        font-size: 3rem;
-        line-height: 3rem;
-    }
+  .left-block-h1 {
+    font-size: $font-size-h3;
+    line-height: 3rem;
+  }
 
-    .pres-video {
-        width: 100%;
-        height: 765px;
-    }
+  .pres-video {
+    width: 100%;
+    height: 47.8125rem; // 765px -> 47.8125rem
+  }
 
-    .left-block-p {
-        font-size: 1.5rem;
-        line-height: 2.1rem;
-    }
-    .pres{
-        flex-direction: column;
-        gap: 1rem;
-        padding-top: 0rem !important;
-    }
-    .pres-main {
-        padding-top: 7rem !important;
-        padding: 0.5rem;
-    }
+  .left-block-p {
+    font-size: $font-size-xm;
+    line-height: 2.1rem;
+  }
+  .pres {
+    @include flex-column;
+    gap: $padding-medium;
+    padding-top: 6rem;
+  }
+  .pres-main {
+    padding-top: $padding-xlarge;
+    padding: $padding-small / 2;
+  }
 
-    .btn-pres {
-        margin-top: 1rem;
-        line-height: 1.225rem;
-        padding: 0.875rem 1.625rem;
-        font-size: 0.875rem;
-    }
+  .btn-pres {
+    margin-top: $padding-small;
+    line-height: 1.225rem;
+    padding: $padding-small $padding-medium;
+    font-size: $font-size-small;
+  }
 }
 </style>

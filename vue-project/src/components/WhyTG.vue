@@ -1,168 +1,187 @@
 <template>
     <div class="why-tg-main" id="whyTG">
-        <div class="left-block">
-            <img src="../assets/img/tg.webp" class="tg-webp" />
+      <div class="left-block">
+        <img src="../assets/img/tg.webp" class="tg-webp" />
+      </div>
+      <div class="right-block">
+        <h2 class="section-title">Почему Telegram?</h2>
+        <div class="benefits">
+          <div class="benefit-item">
+            <span class="benefit-number">1</span>
+            <p class="benefit-text">Клиенту удобнее покупать в мессенджере</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-number">2</span>
+            <p class="benefit-text">Будьте ближе к клиентам — становитесь частью их повседневной жизни</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-number">3</span>
+            <p class="benefit-text">Вы рядом, как часть семьи</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-number">4</span>
+            <p class="benefit-text">Новый рынок и глобальный рост</p>
+          </div>
         </div>
-        <div class="right-block">
-            <h2 class="section-title">Почему Telegram?</h2>
-            <div class="benefits">
-                <div class="benefit-item">
-                    <span class="benefit-number">1</span>
-                    <p class="benefit-text">Клиенту удобнее покупать в мессенджере</p>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-number">2</span>
-                    <p class="benefit-text">Будьте ближе к клиентам — становитесь частью их повседневной жизни</p>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-number">3</span>
-                    <p class="benefit-text">Вы рядом, как часть семьи</p>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-number">4</span>
-                    <p class="benefit-text">Новый рынок и глобальный рост</p>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="global-div">
-                <p class="global-text">
-                    Telegram открывает доступ не только к российской аудитории, но и к международному рынку.
-                </p>
-                <p class="global-text">
-                    Используйте глобальный тренд, чтобы развивать свой бизнес и быть впереди конкурентов.
-                </p>
-            </div>
+        <div class="line"></div>
+        <div class="global-div">
+          <p class="global-text">
+            Telegram открывает доступ не только к российской аудитории, но и к международному рынку.
+          </p>
+          <p class="global-text">
+            Используйте глобальный тренд, чтобы развивать свой бизнес и быть впереди конкурентов.
+          </p>
         </div>
+      </div>
     </div>
-</template>
-
-<style scoped>
-.why-tg-main {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    background-color: #2121210A;
-    border-radius: 2rem;
-    padding: 0 2rem;
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        isMobile: false,
+      };
+    },
+    mounted() {
+      this.handleResize();
+      window.addEventListener('resize', this.handleResize);
+    },
+    beforeUnmount() {
+      window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+      handleResize() {
+        this.isMobile = window.innerWidth < 768;
+      },
+    },
+  };
+  </script>
+  
+  <style scoped lang="scss">
+  @import "../assets/variables.scss";
+  @import "../assets/mixins.scss";
+  
+  .why-tg-main {
+    @include flex-row;
+    gap: $padding-large;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    padding: 0 $padding-large;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.tg-webp {
+  }
+  
+  .tg-webp {
     width: 100%;
     height: auto;
     max-width: 48rem;
     flex: 1;
-}
-
-.right-block {
-    display: flex;
-    flex-direction: column;
+  }
+  
+  .right-block {
+    @include flex-column;
     justify-content: center;
-    gap: 2rem;
+    gap: $padding-large;
     flex: 1;
-}
-
-.section-title {
-    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: $font-size-h2;
     font-weight: 500;
-}
-
-.benefits {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.benefit-item {
-    display: flex;
+  }
+  
+  .benefits {
+    @include flex-column;
+    gap: $padding-medium;
+    margin-bottom: $padding-large;
+  }
+  
+  .benefit-item {
+    @include flex-row;
     align-items: center;
-    gap: 1rem;
-}
-
-.benefit-number {
+    gap: $padding-small;
+  }
+  
+  .benefit-number {
     flex-shrink: 0;
-    font-size: 1.5rem;
+    font-size: $font-size-xm;
     font-weight: 500;
-    color: #2196F3;
-    background-color: #2196F314;
+    color: $primary-color;
+    background-color: $background-color;
     width: 2.625rem;
     height: 2.625rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     border-radius: 999px;
-}
-
-.benefit-text {
-    font-size: 1.5rem;
-    color: #212121;
+  }
+  
+  .benefit-text {
+    font-size: $font-size-xm;
+    color: $text-color;
     word-break: break-word;
     word-wrap: break-word;
-}
-
-.line {
+  }
+  
+  .line {
     height: 1px;
     width: 100%;
     border: 1px solid #21212114;
-}
-
-.global-div {
-    display: flex;
-    flex-direction: row;
-    gap: 1.25rem;
-}
-
-.global-text {
-    font-size: 1.25rem;
+  }
+  
+  .global-div {
+    @include flex-row;
+    gap: $padding-medium;
+  }
+  
+  .global-text {
+    font-size: $font-size-medium;
     color: #2121217A;
     text-align: left;
     line-height: 1.75rem;
     word-break: normal;
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     .section-title {
-        font-size: 2rem;
+      font-size: $font-size-xlarge;
     }
-
+  
     .tg-webp {
-        max-width: 100%;
+      max-width: 100%;
     }
-
+  
     .why-tg-main {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1rem;
+      @include flex-column;
+      padding: $padding-medium;
+      gap: $padding-medium;
     }
-
+  
     .benefit-item {
-        flex-direction: row;
-        align-items: center;
+      @include flex-row;
+      align-items: center;
     }
-
+  
     .benefits {
-        margin-bottom: 0rem;
+      margin-bottom: 0rem;
     }
-
+  
     .benefit-number {
-        font-size: 1rem;
-        width: 1.875rem;
-        height: 1.875rem;
+      font-size: $font-size-medium;
+      width: 1.875rem;
+      height: 1.875rem;
     }
-
+  
     .benefit-text {
-        font-size: 1rem;
+      font-size: $font-size-medium;
     }
-
+  
     .global-div {
-        flex-direction: column;
+      @include flex-column;
     }
-
+  
     .global-text {
-        font-size: 0.875rem;
-        line-height: 1.225rem;
+      font-size: $font-size-small;
+      line-height: 1.225rem;
     }
-}
-</style>
+  }
+  </style>

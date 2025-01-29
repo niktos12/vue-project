@@ -1,4 +1,5 @@
-/* color palette from <https://github.com/vuejs/theme> */
+@import "./mixins.scss";
+@import "./variables.scss";
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -21,26 +22,26 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 }
 @font-face {
-  font-family: 'Graphik LCG';
-  src: url('@/assets/fonts/GraphikLCG-Regular.woff') format('woff');
+  font-family: "Graphik LCG";
+  src: url("@/assets/fonts/GraphikLCG-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Graphik LCG';
-  src: url('@/assets/fonts/GraphikLCG-Medium.woff') format('woff');
+  font-family: "Graphik LCG";
+  src: url("@/assets/fonts/GraphikLCG-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Graphik LCG';
-  src: url('@/assets/fonts/GraphikLCG-Semibold.woff') format('woff');
+  font-family: "Graphik LCG";
+  src: url("@/assets/fonts/GraphikLCG-Semibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Graphik LCG';
-  src: url('@/assets/fonts/GraphikLCG-Bold.woff') format('woff');
+  font-family: "Graphik LCG";
+  src: url("@/assets/fonts/GraphikLCG-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -85,10 +86,8 @@ body {
   min-height: 100vh;
   /* color: var(--color-text); */
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  font-family: 'Graphik LCG';
+  transition: color 0.5s, background-color 0.5s;
+  font-family: "Graphik LCG";
   font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

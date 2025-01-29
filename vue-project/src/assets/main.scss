@@ -1,0 +1,29 @@
+@import "./base.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+#app {
+  width: 100%;
+  padding: $padding-large;
+  font-weight: normal;
+  @include flex-column;
+  background-color: $secondary-color;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+  }
+
+  /* #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  } */
+}

@@ -1,243 +1,240 @@
 <template>
-    <header :class="{ 'scrolled-header': isScrolled }">
-        <a class="logo" href="#">Mini Apps</a>
-        <div class="div-nav" :class="{ 'nav-active': isMenuOpen }">
-            <a href="#whyTG" class="header-nav" @click="closeMenu">Почему Telegram?</a>
-            <a href="#experts" class="header-nav" @click="closeMenu">Наши услуги</a>
-            <a href="#adv" class="header-nav" @click="closeMenu">Преимущества</a>
-            <a href="#howIt" class="header-nav" @click="closeMenu">Как это работает</a>
-        </div>
-        <a class="header-btn" href="#form">Оставить заявку</a>
-        <div class="adaptive-nav">
-            <button class="burger" :class="{ 'burger-active': isMenuOpen }" @click="toggleMenu">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </button>
-            <a class="header-btn-adaptive" href="#form">+</a>
-        </div>
-    </header>
+  <header :class="{ 'scrolled-header': isScrolled }">
+    <a class="logo" href="#">Mini Apps</a>
+    <div class="div-nav" :class="{ 'nav-active': isMenuOpen }">
+      <a href="#whyTG" class="header-nav" @click="closeMenu"
+        >Почему Telegram?</a
+      >
+      <a href="#experts" class="header-nav" @click="closeMenu">Наши услуги</a>
+      <a href="#adv" class="header-nav" @click="closeMenu">Преимущества</a>
+      <a href="#howIt" class="header-nav" @click="closeMenu"
+        >Как это работает</a
+      >
+    </div>
+    <a class="header-btn" href="#form">Оставить заявку</a>
+    <div class="adaptive-nav">
+      <button
+        class="burger"
+        :class="{ 'burger-active': isMenuOpen }"
+        @click="toggleMenu"
+      >
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      <a class="header-btn-adaptive" href="#form">+</a>
+    </div>
+  </header>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from "vue";
 
 export default {
-    props: {
-        isMenuOpen: {
-            type: Boolean,
-            required: true,
-        },
+  props: {
+    isMenuOpen: {
+      type: Boolean,
+      required: true,
     },
-    setup() {
-        const isScrolled = ref(false);
+  },
+  setup() {
+    const isScrolled = ref(false);
 
-        const handleScroll = () => {
-            isScrolled.value = window.scrollY > 0;
-        };
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 0;
+    };
 
-        onMounted(() => {
-            window.addEventListener('scroll', handleScroll);
-        });
+    onMounted(() => {
+      window.addEventListener("scroll", handleScroll);
+    });
 
-        onUnmounted(() => {
-            window.removeEventListener('scroll', handleScroll);
-        });
+    onUnmounted(() => {
+      window.removeEventListener("scroll", handleScroll);
+    });
 
-        return {
-            isScrolled,
-        };
+    return {
+      isScrolled,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.$emit("toggle-menu");
     },
-    methods: {
-        toggleMenu() {
-            this.$emit('toggle-menu');
-        },
-        closeMenu() {
-            this.$emit('toggle-menu', false);
-        },
+    closeMenu() {
+      this.$emit("toggle-menu", false);
     },
+  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/variables.scss";
+@import "../assets/mixins.scss";
+
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff;
-    padding-left: 2rem !important;
-    padding: 0rem;
-    border-radius: 999px;
-    position: absolute;
-    width: 93.5%;
-    align-self: center;
-    top: 3rem;
-    z-index: 3;
-    transition: background-color 0.3s ease-in-out;
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $secondary-color;
+  padding-left: $padding-large !important;
+  padding: 0rem;
+  border-radius: $border-radius;
+  position: absolute;
+  width: 93.5%;
+  align-self: center;
+  top: 3rem;
+  z-index: 3;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .logo {
-    color: #212121;
-    font-size: 1.5rem;
-    font-weight: 600;
+  color: $text-color;
+  font-size: $font-size-xm;
+  font-weight: 600;
 }
 
 .div-nav {
-    display: flex;
-    gap: 3rem;
+  @include flex-row;
+  gap: $padding-large;
 }
 
 .header-nav {
-    color: #212121A3;
-    font-size: 1.25rem;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: $text-color-light;
+  font-size: $font-size-medium;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .header-nav:hover {
-    color: #2196F3;
+  color: $primary-color;
 }
 
 .header-btn-adaptive {
-    display: none;
+  display: none;
 }
 
 .header-btn {
-    border: 1px solid #2196F3;
-    color: #2196F3;
-    padding: 1.25rem 2rem;
-    background-color: #FFFFFF;
-    border-radius: 999px;
-    font-size: 1.25rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  @include button-style;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  background-color: $secondary-color;
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
 }
-
-.header-btn:hover {
-    background-color: #2196F3;
-    color: #FFFFFF;
+.scrolled-header{
+    background-color:#f0f0f0;
+    position: fixed;
 }
-
 .adaptive-nav {
-    display: none;
+  display: none;
 }
 
 .burger {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.scrolled-header {
-    background-color: #f0f0f0;
-    position: fixed;
+  display: none;
+  @include flex-column;
+  gap: $padding-small / 2;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .burger-line {
-    width: 2rem;
-    height: 3px;
-    background-color: #21212152;
-    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  width: 1.125rem;
+  height: 3px;
+  background-color: $text-color-light;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 0px;
-        padding-left: 1rem;
-        flex-direction: row;
-        justify-content: space-between;
-        top: 1rem;
-    }
+  header {
+    padding: 0px;
+    padding-left: $padding-medium;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 1rem;
+  }
 
-    .div-nav {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        margin-top: 14px;
-        flex-direction: column;
-        gap: 1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        z-index: 4;
-        border-radius: 1rem;
-    }
+  .div-nav {
+    @include flex-column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: $padding-large;
+    gap: $padding-medium;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    z-index: 4;
+    border-radius: $border-radius;
+  }
 
-    .div-nav.nav-active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
+  .div-nav.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 
-    .adaptive-nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1.5rem;
-    }
+  .adaptive-nav {
+    @include flex-row;
+    align-items: center;
+    gap: $padding-large;
+  }
 
-    .header-nav {
-        padding: 14px 24px;
-        background-color: #FFFFFF;
-        font-size: 1rem;
-        text-align: center;
-        border-radius: 999px;
-        transition: background-color 0.3s, color 0.3s;
-    }
+  .header-nav {
+    @include button-style;
+    background-color: $secondary-color;
+    text-align: center;
+    color: #212121A3;
+    // &:hover {
+    //   background-color: $primary-color;
+    //   color: $secondary-color;
+    // }
+  }
 
-    .header-nav:hover {
-        background-color: #2196F3;
-        color: #FFFFFF;
+  .header-btn-adaptive {
+    display: block;
+    @include button-style;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $primary-color;
+      color: $secondary-color;
     }
+  }
 
-    .header-btn-adaptive {
-        display: block;
-        border: 1px solid #2196F3;
-        color: #2196F3;
-        padding: 1.25rem 2rem;
-        background-color: #FFFFFF;
-        border-radius: 999px;
-        font-size: 1.25rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
+  .header-btn {
+    display: none;
+  }
 
-    .header-btn {
-        display: none;
-    }
+  .burger {
+    @include flex-column;
+    right: $padding-large;
+    top: $padding-large;
+    z-index: 5;
+  }
 
-    .burger {
-        display: flex;
-        right: 1rem;
-        top: 1rem;
-        z-index: 5;
-    }
+  .burger-active .burger-line {
+    background-color: $text-color;
+  }
 
-    .burger-active .burger-line {
-        width: auto;
-        background-color: #212121;
-    }
+  .burger-active .burger-line:nth-child(1) {
+    width: 18px;
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
 
-    .burger-active .burger-line:nth-child(1) {
-        width: 18px;
-        transform: rotate(45deg) translate(0.5rem, 0.5rem);
-    }
+  .burger-active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
 
-    .burger-active .burger-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .burger-active .burger-line:nth-child(3) {
-        width: 18px;
-        transform: rotate(-45deg) translate(0.5rem, -0.46rem);
-    }
+  .burger-active .burger-line:nth-child(3) {
+    width: 18px;
+    transform: rotate(-45deg) translate(0.5rem, -0.46rem);
+  }
 }
 </style>

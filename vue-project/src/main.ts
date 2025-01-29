@@ -1,4 +1,4 @@
-import "./assets/main.css";
+import "./assets/main.scss";
 
 import { createApp } from "vue";
 import Header from "./components/Header.vue";
@@ -9,7 +9,6 @@ import WhyTG from "./components/WhyTG.vue";
 import HowItWorks from "./components/HowItWorks.vue";
 import Footer from "./components/Footer.vue";
 import Experts from "./components/Experts.vue";
-import { facade } from "vue-input-facade";
 const app = createApp(App);
 app
   .component("Header", Header)
