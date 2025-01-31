@@ -11,7 +11,6 @@
         >Как это работает</a
       >
     </div>
-    <a class="header-btn" href="#form">Оставить заявку</a>
     <div class="adaptive-nav">
       <button
         class="burger"
@@ -23,7 +22,9 @@
         <span class="burger-line"></span>
       </button>
       <a class="header-btn-adaptive" href="#form">+</a>
+      <a class="header-btn" href="#form">Оставить заявку</a>
     </div>
+    
   </header>
 </template>
 
@@ -115,6 +116,7 @@ header {
 
 .header-btn {
   @include button-style;
+  display: block;
   border: 1px solid $primary-color;
   color: $primary-color;
   background-color: $secondary-color;
@@ -123,17 +125,17 @@ header {
     color: $secondary-color;
   }
 }
-.scrolled-header{
-    background-color:#f0f0f0;
-    position: fixed;
+.scrolled-header {
+  background-color: #f0f0f0;
+  position: fixed;
 }
-.adaptive-nav {
-  display: none;
-}
+// .adaptive-nav {
+//   display: none;
+// }
 
 .burger {
   display: none;
-  @include flex-column;
+  // @include flex-column;
   gap: $padding-small / 2;
   background: none;
   border: none;
@@ -146,8 +148,7 @@ header {
   background-color: $text-color-light;
   transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
-
-@media (max-width: 768px) {
+@include screen-between(300px, 480px) {
   header {
     padding: 0px;
     padding-left: $padding-medium;
@@ -189,7 +190,7 @@ header {
     @include button-style;
     background-color: $secondary-color;
     text-align: center;
-    color: #212121A3;
+    color: #212121a3;
     // &:hover {
     //   background-color: $primary-color;
     //   color: $secondary-color;
@@ -225,7 +226,7 @@ header {
 
   .burger-active .burger-line:nth-child(1) {
     width: 18px;
-    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    transform: rotate(45deg) translate(0.25rem, 0.35rem);
   }
 
   .burger-active .burger-line:nth-child(2) {
@@ -234,7 +235,72 @@ header {
 
   .burger-active .burger-line:nth-child(3) {
     width: 18px;
-    transform: rotate(-45deg) translate(0.5rem, -0.46rem);
+    transform: rotate(-45deg) translate(0.25rem, -0.36rem);
   }
+}
+@include screen-between(480px, 1280px) {
+  .adaptive-nav {
+    display: flex; 
+    align-items: center;
+    gap: 2rem;
+  }
+  .div-nav.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .header-nav {
+    @include button-style;
+    background-color: $secondary-color;
+    text-align: center;
+    color: #212121a3;
+    // &:hover {
+    //   background-color: $primary-color;
+    //   color: $secondary-color;
+    // }
+  }
+  .div-nav {
+    @include flex-column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: $padding-large;
+    gap: $padding-medium;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    z-index: 4;
+    border-radius: $border-radius;
+  }
+  .burger {
+    @include flex-column;
+    right: $padding-large;
+    top: $padding-large;
+    z-index: 5;
+  }
+
+  .burger-active .burger-line {
+    background-color: $text-color;
+  }
+
+  .burger-active .burger-line:nth-child(1) {
+    width: 18px;
+    transform: rotate(45deg) translate(0.25rem, 0.35rem);
+  }
+
+  .burger-active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-active .burger-line:nth-child(3) {
+    width: 18px;
+    transform: rotate(-45deg) translate(0.25rem, -0.36rem);
+  }
+  // .header-btn{
+  //   display: block;
+  // }
 }
 </style>

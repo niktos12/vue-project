@@ -24,7 +24,8 @@
       Вы видите все процессы в реальном времени и получаете полное понимание,
       как клиенты взаимодействуют с вашим продуктом
     </p>
-    <img :src="processImageSrc" class="process-img" />
+    <img v-if="!small" src="../assets/img/plan.svg" class="process-img" />
+    <img v-else src="../assets/img/Frame 830.svg" class="process-img" />
   </div>
 </template>
 
@@ -32,28 +33,38 @@
 export default {
   data() {
     return {
-      isMobile: false,
+      small: false,
     };
   },
-  computed: {
-    processImageSrc() {
-      return this.isMobile
-        ? "src/assets/img/Frame 830.svg"
-        : "src/assets/img/plan.svg";
-    },
+  created() {
+    window.addEventListener("resize", this.onResize);
+    this.onResize();
   },
-  mounted() {
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.handleResize);
+  destroyed() {
+    window.removeEventListener("resize", this.onResize);
   },
   methods: {
-    handleResize() {
-      this.isMobile = window.innerWidth < 768;
+    onResize() {
+      this.small = window.innerWidth < 769;
     },
   },
+  // computed: {
+  //   isMobile() {
+  //     return this.innerWidth <= 769;
+  //   },
+  // },
+  // mounted() {
+  //   this.handleResize();
+  //   window.addEventListener("resize", this.handleResize);
+  // },
+  // beforeUnmount() {
+  //   window.removeEventListener("resize", this.handleResize);
+  // },
+  // methods: {
+  //   handleResize() {
+  //     this.isMobile = window.innerWidth < 768;
+  //   },
+  // },
 };
 </script>
 
@@ -126,8 +137,18 @@ export default {
   align-self: center;
   margin-bottom: 6rem;
 }
-
-@media (max-width: 480px) {
+@include screen-between(481px, 769px) {
+  .process-img {
+    width: 50vw;
+  }
+  .p-process {
+    text-align: left;
+  }
+  .card-div {
+    max-width: none;
+  }
+}
+@include screen-between(300px, 480px) {
   .h1-how-works {
     font-size: $font-size-xlarge;
     line-height: 2.2rem;
@@ -162,7 +183,8 @@ export default {
   }
 
   .process-img {
-    width: 100%;
+    // width: auto;
+
     height: auto;
     max-width: 18.75rem; // 300px -> 18.75rem
     margin-bottom: $padding-large;

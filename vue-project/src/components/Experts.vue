@@ -104,20 +104,20 @@ export default {
           },
         },
         480: {
-          slidesPerView: 1,
+          slidesPerView: "auto",
           spaceBetween: 10,
           navigation: {
             enabled: true,
           },
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          navigation: {
-            enabled: false,
-          },
-        },
-        1024: {
+        // 768: {
+        //   slidesPerView: "auto",
+        //   spaceBetween: 20,
+        //   navigation: {
+        //     enabled: false,
+        //   },
+        // },
+        1140: {
           slidesPerView: "auto",
           spaceBetween: 40,
           navigation: {
@@ -215,8 +215,7 @@ export default {
   max-width: 37rem; // 592px -> 37rem
   width: 100%;
 }
-
-@media (max-width: 480px) {
+@include screen-between(300px,1080px){
   .exp-main {
     padding: $padding-small / 2;
     @include flex-column;
@@ -242,14 +241,17 @@ export default {
   }
 
   .exp-h1 {
-    font-size: $font-size-xm;
+    // font-size: $font-size-xm;
+    font-size: $font-size-xlarge;
     line-height: 2.1rem;
+    max-width: 100%;
   }
 
   .exp-p {
-    font-size: $font-size-base;
+    // font-size: $font-size-base;
     line-height: 1.4rem;
-    margin-bottom: 4.5rem; // 72px -> 4.5rem
+    max-width: 100%;
+    margin-bottom: 4.5rem; 
   }
 
   .exp-div {

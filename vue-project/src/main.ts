@@ -14,10 +14,8 @@ app
   .component("Header", Header)
   .component("Presentation", Presentation)
   .component("Advantages", Advantages)
-  .component('WhyTg', WhyTG)
-  .component('Experts', Experts)
-  .component('HowItWorks', HowItWorks)
-  .component('Footer', Footer)
-
-
+  .component("WhyTg", WhyTG)
+  .component("Experts", Experts)
+  .component("HowItWorks", HowItWorks)
+  .component("Footer", Footer);
 app.mount("#app");

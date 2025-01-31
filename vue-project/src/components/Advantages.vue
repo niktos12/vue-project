@@ -34,25 +34,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      isMobile: false,
-    };
-  },
-  mounted() {
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-  },
-  methods: {
-    handleResize() {
-      this.isMobile = window.innerWidth < 480;
-    },
-  },
-};
+
 </script>
 
 <style scoped lang="scss">
@@ -82,6 +64,7 @@ export default {
   text-align: center;
   color: $text-color-light;
   margin: 0;
+  line-height: 33.6px;
 }
 
 .adv-img {
@@ -104,8 +87,7 @@ export default {
   width: 24rem;
   gap: 2rem;
 }
-
-@media (max-width: 480px) {
+@include screen-between(300px, 480px) {
   .adv-main {
     padding: $padding-medium;
     gap: $padding-small;
@@ -115,11 +97,12 @@ export default {
     overflow-x: auto;
     justify-content: normal;
     scrollbar-width: thin;
-    gap: $padding-small;
+    gap:2rem;
   }
 
   .adv-p {
     font-size: $font-size-small;
+    line-height: 22.4px;
   }
 
   .adv-img {
@@ -133,6 +116,37 @@ export default {
 
   .adv-div {
     width: 12.5rem;
+  }
+}
+@include screen-between(480px, 999px) {
+  .adv-scroll-container {
+    overflow-x: auto;
+    justify-content: normal;
+    scrollbar-width: thin;
+    gap: 2.5rem;
+  }
+  .adv-div{
+    width: 18rem;
+  }
+  .adv-span{
+    
+    font-size: $font-size-medium;
+  }
+  .adv-p{
+    font-size: $font-size-medium;
+  }
+  .adv-img{
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+}
+
+@include screen-between(1000px, 1440px) {
+  .adv-scroll-container {
+    gap: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 }
 </style>

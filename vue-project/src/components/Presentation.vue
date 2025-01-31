@@ -23,13 +23,6 @@ export default {
       isMobile: false,
     };
   },
-  computed: {
-    processImageSrc() {
-      return this.isMobile
-        ? "src/assets/img/Frame_830.svg"
-        : "src/assets/img/plan.svg";
-    },
-  },
   mounted() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -111,8 +104,7 @@ export default {
   word-break: normal;
   color: $text-color;
 }
-
-@media (max-width: 480px) {
+@include screen-between(300px, 480px) {
   .left-block-h1 {
     font-size: $font-size-h3;
     line-height: 3rem;
@@ -140,8 +132,20 @@ export default {
   .btn-pres {
     margin-top: $padding-small;
     line-height: 1.225rem;
-    padding: $padding-small $padding-medium;
+    padding: 0.875rem $padding-large;
     font-size: $font-size-small;
+  }
+}
+@include screen-between(1000px, 1440px) {
+  .pres {
+    flex-direction: column;
+  }
+  .left-block-h1{
+    font-size: $font-size-h2 + 1rem;
+  }
+  .pres-video {
+    // width: 45%;
+    aspect-ratio: auto;
   }
 }
 </style>

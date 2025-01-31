@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <OverlayEffect :isMenuOpen="isMenuOpen" :toggleMenu="toggleMenu" />
     <main>
       <Header :isMenuOpen="isMenuOpen" @toggle-menu="toggleMenu" />
@@ -15,16 +14,15 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import OverlayEffect from './components/OverlayEffect.vue';
-import Header from './components/Header.vue';
-import Presentation from './components/Presentation.vue';
-import Advantages from './components/Advantages.vue';
-import WhyTG from './components/WhyTG.vue';
-import Experts from './components/Experts.vue';
-import HowItWorks from './components/HowItWorks.vue';
-import Footer from './components/Footer.vue';
-
+import { ref } from "vue";
+import OverlayEffect from "./components/OverlayEffect.vue";
+import Header from "./components/Header.vue";
+import Presentation from "./components/Presentation.vue";
+import Advantages from "./components/Advantages.vue";
+import WhyTG from "./components/WhyTG.vue";
+import Experts from "./components/Experts.vue";
+import HowItWorks from "./components/HowItWorks.vue";
+import Footer from "./components/Footer.vue";
 export default {
   components: {
     Header,
@@ -49,7 +47,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/mixins.scss";
+@import "./assets/variables.scss";
 main {
   display: flex;
   flex-direction: column;
@@ -59,8 +59,7 @@ main {
 html {
   scroll-behavior: smooth;
 }
-
-@media (max-width: 480px) {
+@include screen-between(300px, 480px) {
   #app {
     padding: 0.5rem;
   }

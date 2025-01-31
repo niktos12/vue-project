@@ -9,6 +9,7 @@ declare module "*.vue" {
   }
   
   // Добавьте это, если не создавали отдельный файл для vue-input-facade
-  declare module "vue-input-facade" {
-    export const facade: any; // Замените `any` на точные типы, если они известны
+  declare module 'vue-the-mask' {
+    import { Component } from 'vue';
+    export const TheMask: Component;
   }
