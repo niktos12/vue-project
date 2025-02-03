@@ -62,7 +62,6 @@ import { z } from "zod";
 import { vMaska } from "maska/vue";
 export default {
   directives: { maska: vMaska },
-  // components: { MaskInput },
   setup() {
     const formData = ref({
       firstName: "",
@@ -124,7 +123,7 @@ footer {
 .h1-new-level {
   font-size: $font-size-h2;
   font-weight: 500;
-  line-height: 4.4rem; // 70.4px -> 2.5rem * 16px = 4.4rem
+  line-height: 4.4rem; 
   color: $secondary-color;
   text-align: left;
 }
@@ -133,7 +132,7 @@ footer {
   color: $secondary-color;
   font-size: $font-size-xm;
   line-height: 1.75rem;
-  max-width: 26.25rem; // 420px -> 26.25rem
+  max-width: 26.25rem; 
   text-align: left;
 }
 

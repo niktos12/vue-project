@@ -89,7 +89,7 @@ export default {
   max-width: 48rem;
   flex: 1;
 }
-.left-block{
+.left-block {
   display: flex;
 }
 .right-block {
@@ -198,41 +198,41 @@ export default {
     line-height: 1.225rem;
   }
 }
-@include screen-between(1280px,1440px){
-  .why-tg-main{
+@include screen-between(1280px, 1440px) {
+  .why-tg-main {
     padding-left: 0;
   }
-  .tg-webp{
+  .tg-webp {
     max-width: 32rem;
   }
-  .section-title{
+  .section-title {
     margin-bottom: 0px;
     font-size: $font-size-h3;
   }
 }
-@include screen-between(481px,727px){
-  .right-block{
+@include screen-between(481px, 727px) {
+  .right-block {
     padding: 1rem 0;
   }
 }
-@include screen-between(728px,1280px){
-  .why-tg-main{
+@include screen-between(728px, 1280px) {
+  .why-tg-main {
     flex-direction: column;
   }
-  .tg-webp{
+  .tg-webp {
     max-width: 42rem;
   }
-  .right-block{
+  .right-block {
     padding: $padding-medium;
   }
-  .benefit-text{
+  .benefit-text {
     font-size: $font-size-medium;
   }
-  .global-text{
+  .global-text {
     font-size: $font-size-base;
     line-height: 1.5rem;
   }
-  .section-title{
+  .section-title {
     font-size: $font-size-h3;
     margin-bottom: 0;
   }

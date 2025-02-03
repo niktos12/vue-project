@@ -24,7 +24,6 @@
       <a class="header-btn-adaptive" href="#form">+</a>
       <a class="header-btn" href="#form">Оставить заявку</a>
     </div>
-    
   </header>
 </template>
 
@@ -240,7 +239,7 @@ header {
 }
 @include screen-between(480px, 1280px) {
   .adaptive-nav {
-    display: flex; 
+    display: flex;
     align-items: center;
     gap: 2rem;
   }

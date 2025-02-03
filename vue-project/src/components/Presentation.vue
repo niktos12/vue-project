@@ -112,7 +112,7 @@ export default {
 
   .pres-video {
     width: 100%;
-    height: 47.8125rem; // 765px -> 47.8125rem
+    height: 47.8125rem;
   }
 
   .left-block-p {
@@ -140,11 +140,10 @@ export default {
   .pres {
     flex-direction: column;
   }
-  .left-block-h1{
+  .left-block-h1 {
     font-size: $font-size-h2 + 1rem;
   }
   .pres-video {
-    // width: 45%;
     aspect-ratio: auto;
   }
 }

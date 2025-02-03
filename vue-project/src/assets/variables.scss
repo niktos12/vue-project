@@ -1,41 +1,38 @@
-$primary-color: #2196f3; // Основной цвет (синий)
-$secondary-color: #ffffff; // Вторичный цвет (белый)
-$text-color: #212121; // Основной текстовый цвет
-$text-color-light: rgba(33, 33, 33, 0.5); // Светлый текстовый цвет
-$border-radius: 1.5rem; // Радиус скругления
+$primary-color: #2196f3; 
+$secondary-color: #ffffff; 
+$text-color: #212121; 
+$text-color-light: rgba(33, 33, 33, 0.5); 
+$border-radius: 1.5rem; 
 $background-color: #2121210a;
-$font-size-base: 1rem; // Базовый размер шрифта (16px)
-$font-size-small: 0.875rem; // Маленький размер шрифта
+$font-size-base: 1rem; 
+$font-size-small: 0.875rem; 
 $font-size-base:1rem;
-$font-size-medium: 1.25rem; // Средний размер шрифта
+$font-size-medium: 1.25rem; 
 $font-size-xm: 1.5rem;
-$font-size-large: 1.75rem; // Большой размер шрифта
-$font-size-xlarge: 2rem; // Очень большой размер шрифта
-$font-size-xxlarge: 2.5rem; // Огромный размер шрифта
+$font-size-large: 1.75rem; 
+$font-size-xlarge: 2rem; 
+$font-size-xxlarge: 2.5rem; 
 $font-size-h3:3rem;
 $font-size-h2:4rem;
 $font-h1:6rem;
-$padding-base: 1rem; // Базовый отступ
-$padding-small: 0.5rem; // Маленький отступ
-$padding-medium: 1rem; // Средний отступ
+$padding-base: 1rem; 
+$padding-small: 0.5rem; 
+$padding-medium: 1rem; 
 $padding-big:1.25rem;
-$padding-large: 1.5rem; // Большой отступ
-$padding-xlarge: 2rem; // Очень большой отступ
+$padding-large: 1.5rem; 
+$padding-xlarge: 2rem;
 $padding-xxlarge: 2.5rem;
 $padding-megalarge:3rem;
 $padding-x-swiper: 6.75rem;
 $padding-y-swiper: 4rem;
 $border-radius-base:1rem;
 $border-radius-full: 99rem;
-$max-width: 1200px; // Максимальная ширина контейнера
+$max-width: 1200px; 
 
-// Другие переменные
 $section-gap: 10rem;
 
-// Переменные для шрифтов
 $font-family-base: "Graphik LCG", sans-serif;
 
-// Переменные для шрифтов
 $font-weights: (
   400: 400,
   500: 500,

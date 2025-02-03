@@ -48,23 +48,6 @@ export default {
       this.small = window.innerWidth < 769;
     },
   },
-  // computed: {
-  //   isMobile() {
-  //     return this.innerWidth <= 769;
-  //   },
-  // },
-  // mounted() {
-  //   this.handleResize();
-  //   window.addEventListener("resize", this.handleResize);
-  // },
-  // beforeUnmount() {
-  //   window.removeEventListener("resize", this.handleResize);
-  // },
-  // methods: {
-  //   handleResize() {
-  //     this.isMobile = window.innerWidth < 768;
-  //   },
-  // },
 };
 </script>
 
@@ -88,7 +71,6 @@ export default {
   align-self: center;
   margin-top: 2.5rem;
   margin-bottom: 4.5rem;
-  // max-width: 57.5rem; // 920px -> 57.5rem
 }
 
 .desc-div {
@@ -101,10 +83,9 @@ export default {
 .card-div {
   @include card-style;
   width: 100%;
-  max-width: 29rem; // 464px -> 29rem
+  max-width: 29rem;
   border-radius: $border-radius-base !important;
   padding: $padding-xlarge !important;
-  // gap: $padding-small / 2;
 }
 
 .p-card {
@@ -183,10 +164,8 @@ export default {
   }
 
   .process-img {
-    // width: auto;
-
     height: auto;
-    max-width: 18.75rem; // 300px -> 18.75rem
+    max-width: 18.75rem;
     margin-bottom: $padding-large;
   }
 }

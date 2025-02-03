@@ -110,13 +110,7 @@ export default {
             enabled: true,
           },
         },
-        // 768: {
-        //   slidesPerView: "auto",
-        //   spaceBetween: 20,
-        //   navigation: {
-        //     enabled: false,
-        //   },
-        // },
+
         1140: {
           slidesPerView: "auto",
           spaceBetween: 40,
@@ -155,7 +149,7 @@ export default {
 }
 
 .slide-picture {
-  height: 42.75rem; 
+  height: 42.75rem;
   width: 100%;
   object-fit: contain;
 }
@@ -175,29 +169,28 @@ export default {
   word-break: normal;
 }
 .swiper-button-next {
-    display: none;
-    background-color: #FFFFFF;
-    width: 52px;
-    height: 52px;
-    // padding: $padding-large;
-    border-radius: 999px;
-    border: 1px solid #21212114;
-    color: #21212152;
-    right: 9%;
+  display: none;
+  background-color: #ffffff;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid #21212114;
+  color: #21212152;
+  right: 9%;
 }
 .swiper-button-next::after {
-    display: none;
+  display: none;
 }
 
 .exp-member {
-  width: 13.75rem; // 220px -> 13.75rem
-  height: 4rem; // 64px -> 4rem
+  width: 13.75rem;
+  height: 4rem;
 }
 
 .exp-h1 {
   font-weight: 500;
   font-size: $font-size-xxlarge;
-  line-height: 2.8rem; // 44.8px -> 2.8rem
+  line-height: 2.8rem;
   text-align: left;
   color: $text-color;
   max-width: 362px;
@@ -206,16 +199,16 @@ export default {
 
 .left-block {
   padding: $padding-xlarge;
-  padding-right: 10.375rem; // 166px -> 10.375rem
+  padding-right: 10.375rem;
   background-color: $background-color;
   @include flex-column;
   justify-content: space-between;
-  height: 50.75rem; // 812px -> 50.75rem
+  height: 50.75rem;
   border-radius: $border-radius;
-  max-width: 37rem; // 592px -> 37rem
+  max-width: 37rem;
   width: 100%;
 }
-@include screen-between(300px,1080px){
+@include screen-between(300px, 1080px) {
   .exp-main {
     padding: $padding-small / 2;
     @include flex-column;
@@ -241,17 +234,15 @@ export default {
   }
 
   .exp-h1 {
-    // font-size: $font-size-xm;
     font-size: $font-size-xlarge;
     line-height: 2.1rem;
     max-width: 100%;
   }
 
   .exp-p {
-    // font-size: $font-size-base;
     line-height: 1.4rem;
     max-width: 100%;
-    margin-bottom: 4.5rem; 
+    margin-bottom: 4.5rem;
   }
 
   .exp-div {
@@ -281,7 +272,6 @@ export default {
     box-sizing: border-box;
     padding: none;
     height: auto;
-    // width: 18.75rem;
   }
 }
 </style>

@@ -33,9 +33,7 @@
   </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style scoped lang="scss">
 @import "../assets/variables.scss";
@@ -97,7 +95,7 @@
     overflow-x: auto;
     justify-content: normal;
     scrollbar-width: thin;
-    gap:2rem;
+    gap: 2rem;
   }
 
   .adv-p {
@@ -125,17 +123,16 @@
     scrollbar-width: thin;
     gap: 2.5rem;
   }
-  .adv-div{
+  .adv-div {
     width: 18rem;
   }
-  .adv-span{
-    
+  .adv-span {
     font-size: $font-size-medium;
   }
-  .adv-p{
+  .adv-p {
     font-size: $font-size-medium;
   }
-  .adv-img{
+  .adv-img {
     width: 8.5rem;
     height: 8.5rem;
   }
