@@ -22,7 +22,13 @@
         <span class="burger-line"></span>
       </button>
       <a class="header-btn-adaptive" href="#form">+</a>
-      <a class="header-btn" href="#form">Оставить заявку</a>
+      <a
+        class="header-btn"
+        href="#form"
+        :class="{ clicked: clickedBtn }"
+        @click="handleButtonClick"
+        >Оставить заявку</a
+      >
     </div>
   </header>
 </template>
@@ -39,11 +45,14 @@ export default {
   },
   setup() {
     const isScrolled = ref(false);
+    const clikedBtn = ref(false);
 
     const handleScroll = () => {
       isScrolled.value = window.scrollY > 0;
     };
-
+    const handleClickedBtn = () => {
+      clikedBtn.value = !clikedBtn.value;
+    };
     onMounted(() => {
       window.addEventListener("scroll", handleScroll);
     });
@@ -54,6 +63,8 @@ export default {
 
     return {
       isScrolled,
+      clikedBtn,
+      handleClickedBtn,
     };
   },
   methods: {
@@ -80,7 +91,7 @@ header {
   padding: 0rem;
   border-radius: $border-radius;
   position: absolute;
-  width: 93.5%;
+  width: 95%;
   align-self: center;
   top: 3rem;
   z-index: 3;
@@ -123,18 +134,24 @@ header {
     background-color: $primary-color;
     color: $secondary-color;
   }
+  .header-btn.clicked {
+    background-color: $text-color !important;
+    color: $secondary-color !important;
+    border-color: $text-color !important;
+  }
+  // &:focus{
+  //   background-color: $text-color;
+  //   color: $secondary-color;
+  //   border-color: $text-color;
+  // }
 }
 .scrolled-header {
   background-color: #f0f0f0;
   position: fixed;
 }
-// .adaptive-nav {
-//   display: none;
-// }
 
 .burger {
   display: none;
-  // @include flex-column;
   gap: $padding-small / 2;
   background: none;
   border: none;
@@ -154,6 +171,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     top: 1rem;
+    width: 93.5%;
   }
 
   .div-nav {

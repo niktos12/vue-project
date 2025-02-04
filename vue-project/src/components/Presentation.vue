@@ -53,7 +53,7 @@ export default {
 .pres {
   @include flex-row;
   padding-top: 5rem;
-  gap: $padding-large;
+  gap: 7rem;
   align-items: center;
   width: 100%;
   flex-wrap: wrap;

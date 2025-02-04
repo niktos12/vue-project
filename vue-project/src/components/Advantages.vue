@@ -51,9 +51,10 @@
   @include flex-row;
   gap: $padding-large;
   padding-bottom: 10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: start;
   overflow-x: hidden;
+  flex-wrap: wrap;
 }
 
 .adv-p {
@@ -96,6 +97,7 @@
     justify-content: normal;
     scrollbar-width: thin;
     gap: 2rem;
+    flex-wrap: nowrap;
   }
 
   .adv-p {
@@ -122,6 +124,7 @@
     justify-content: normal;
     scrollbar-width: thin;
     gap: 2.5rem;
+    flex-wrap: nowrap;
   }
   .adv-div {
     width: 18rem;
