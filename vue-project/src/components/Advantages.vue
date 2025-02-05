@@ -49,9 +49,9 @@
 
 .adv-scroll-container {
   @include flex-row;
-  gap: $padding-large;
+  gap: 3rem;
   padding-bottom: 10px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: start;
   overflow-x: hidden;
   flex-wrap: wrap;
@@ -83,7 +83,7 @@
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
-  width: 24rem;
+  width: 23.75rem;
   gap: 2rem;
 }
 @include screen-between(300px, 480px) {

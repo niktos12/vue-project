@@ -78,7 +78,8 @@ export default {
   gap: $padding-large;
   background-color: $background-color;
   border-radius: $border-radius;
-  padding: 0 $padding-large;
+  padding: 0 $padding-megalarge;
+  padding-left: 6rem;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -199,9 +200,6 @@ export default {
   }
 }
 @include screen-between(1280px, 1440px) {
-  .why-tg-main {
-    padding-left: 0;
-  }
   .tg-webp {
     max-width: 32rem;
   }
@@ -210,14 +208,24 @@ export default {
     font-size: $font-size-h3;
   }
 }
+@include screen-between(1280px, 1560px){
+  .why-tg-main{
+    padding-left: 0;
+  }
+}
 @include screen-between(481px, 727px) {
   .right-block {
     padding: 1rem 0;
   }
+  .why-tg-main{
+    padding-left: 3rem;
+  }
 }
+
 @include screen-between(728px, 1280px) {
   .why-tg-main {
     flex-direction: column;
+    padding-left: 3rem;
   }
   .tg-webp {
     max-width: 42rem;

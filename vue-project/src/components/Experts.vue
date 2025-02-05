@@ -198,7 +198,7 @@ export default {
 }
 
 .left-block {
-  padding: $padding-xlarge;
+  padding: 4rem;
   padding-right: 10.375rem;
   background-color: $background-color;
   @include flex-column;
@@ -207,6 +207,11 @@ export default {
   border-radius: $border-radius;
   max-width: 37rem;
   width: 100%;
+}
+@include screen-between(1081px,1280px){
+  .left-block{
+    padding-right: 4rem;
+  }
 }
 @include screen-between(300px, 1080px) {
   .exp-main {
