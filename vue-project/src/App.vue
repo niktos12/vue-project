@@ -23,6 +23,7 @@ import WhyTG from "./components/WhyTG.vue";
 import Experts from "./components/Experts.vue";
 import HowItWorks from "./components/HowItWorks.vue";
 import Footer from "./components/Footer.vue";
+
 export default {
   components: {
     Header,

@@ -1,19 +1,27 @@
 <template>
   <footer>
     <div class="new-level" id="form">
-      <h1 class="h1-new-level">
-        Готовы выйти на новый уровень и захватить глобальный рынок?
-      </h1>
-      <p class="p-new-level">
-        Мы поможем вам стать лидером мобильной коммерции в России и за её
-        пределами!
-      </p>
+      <div class="new-level-div">
+        <h1 class="h1-new-level">
+          Готовы выйти на новый уровень и захватить глобальный рынок?
+        </h1>
+        <p class="p-new-level">
+          Мы поможем вам стать лидером мобильной коммерции в России и за её
+          пределами!
+        </p>
+      </div>
+
       <p class="privacy">©️ Студия Сайтов 2025. Все права защищены</p>
     </div>
     <form class="form" @submit.prevent="submitForm">
       <div class="inputs-group">
         <div class="half-form-group">
-          <input v-model="formData.firstName" type="text" placeholder="Имя*" />
+          <input
+            v-model="formData.firstName"
+            type="text"
+            placeholder="Имя*"
+            class="input-with-placeholder"
+          />
           <span v-if="errors.firstName" class="error">{{
             errors.firstName
           }}</span>
@@ -23,6 +31,7 @@
             v-model="formData.lastName"
             type="text"
             placeholder="Фамилия*"
+            class="input-with-placeholder"
           />
           <span v-if="errors.lastName" class="error">{{
             errors.lastName
@@ -32,15 +41,16 @@
 
       <div class="form-group">
         <input
-          class="input-mask"
+          class="input-mask input-with-placeholder"
           v-model="formData.phone"
           v-maska="'+7(###) ### ##-##'"
           placeholder="Номер телефона*"
-        ></input>
+        />
         <span v-if="errors.phone" class="error">{{ errors.phone }}</span>
       </div>
       <div class="form-group">
         <input
+          class="input-with-placeholder"
           v-model="formData.business"
           type="text"
           placeholder="Сфера бизнеса"
@@ -75,9 +85,7 @@ export default {
     const schema = z.object({
       firstName: z.string().min(1, "Имя обязательно"),
       lastName: z.string().min(1, "Фамилия обязательна"),
-      phone: z
-        .string()
-        .min(17, "Номер телефона обязателен"),
+      phone: z.string().min(17, "Номер телефона обязателен"),
       business: z.string().optional(),
     });
 
@@ -114,7 +122,7 @@ export default {
 footer {
   @include flex-row;
   gap: 8rem;
-  padding: $padding-xlarge;
+  padding: 8rem;
   background-color: $primary-color;
   border-radius: $border-radius;
   align-items: start;
@@ -123,7 +131,7 @@ footer {
 .h1-new-level {
   font-size: $font-size-h2;
   font-weight: 500;
-  line-height: 4.4rem; 
+  line-height: 4.4rem;
   color: $secondary-color;
   text-align: left;
 }
@@ -132,18 +140,21 @@ footer {
   color: $secondary-color;
   font-size: $font-size-xm;
   line-height: 1.75rem;
-  max-width: 26.25rem; 
+  max-width: 26.25rem;
   text-align: left;
 }
 
 .privacy {
   line-height: 1.4rem;
-  color: #FFFFFF52;
+  color: #ffffff52;
   font-size: $font-size-small;
   margin-top: $padding-xlarge;
   text-align: left;
 }
-
+.new-level-div{
+  @include flex-column;
+  gap: 3rem;
+}
 .new-level {
   @include flex-column;
   gap: $padding-large;
@@ -177,7 +188,25 @@ footer {
 .half-form-group input:focus {
   outline-color: $primary-color;
 }
+.input-with-placeholder {
+  position: relative;
+  &::placeholder {
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    color: $text-color-light;
+    pointer-events: none;
+    font-size: $font-size-xm;
+  }
 
+  &:focus::placeholder {
+    top: 0.7rem;
+    transform: translateY(0);
+    font-size: $font-size-small;
+  }
+}
 .form-group {
   width: 100%;
 }
@@ -275,13 +304,19 @@ footer {
     line-height: 1.4rem;
   }
 }
-@include screen-between(768px,1440px){
-  footer{
+@include screen-between(768px, 1440px) {
+  footer {
     flex-direction: column;
     gap: 3rem;
+    padding: 4rem;
   }
-  .privacy{
+  .privacy {
     margin-top: 0;
+  }
+}
+@include screen-between(1441px, 1750px) {
+  footer {
+    gap: 6rem;
   }
 }
 </style>

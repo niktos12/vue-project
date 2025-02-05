@@ -64,10 +64,12 @@ export default {
 }
 
 .p-process {
+  max-width: 960px;
   font-size: $font-size-large;
   letter-spacing: -0.6px;
   color: $text-color-light;
   text-align: center;
+  line-height: 39.2px;
   align-self: center;
   margin-top: 2.5rem;
   margin-bottom: 4.5rem;
@@ -117,6 +119,7 @@ export default {
   height: auto;
   align-self: center;
   margin-bottom: 6rem;
+  padding: 0 6.375rem ;
 }
 @include screen-between(481px, 769px) {
   .process-img {
@@ -127,6 +130,11 @@ export default {
   }
   .card-div {
     max-width: none;
+  }
+}
+@include screen-between(300px, 1240px){
+  .process-img{
+    padding: 0px;
   }
 }
 @include screen-between(300px, 480px) {

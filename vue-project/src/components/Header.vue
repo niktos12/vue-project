@@ -22,13 +22,7 @@
         <span class="burger-line"></span>
       </button>
       <a class="header-btn-adaptive" href="#form">+</a>
-      <a
-        class="header-btn"
-        href="#form"
-        :class="{ clicked: clickedBtn }"
-        @click="handleButtonClick"
-        >Оставить заявку</a
-      >
+      <a class="header-btn" href="#form">Оставить заявку</a>
     </div>
   </header>
 </template>
@@ -45,13 +39,9 @@ export default {
   },
   setup() {
     const isScrolled = ref(false);
-    const clikedBtn = ref(false);
 
     const handleScroll = () => {
       isScrolled.value = window.scrollY > 0;
-    };
-    const handleClickedBtn = () => {
-      clikedBtn.value = !clikedBtn.value;
     };
     onMounted(() => {
       window.addEventListener("scroll", handleScroll);
@@ -63,8 +53,6 @@ export default {
 
     return {
       isScrolled,
-      clikedBtn,
-      handleClickedBtn,
     };
   },
   methods: {
@@ -91,9 +79,9 @@ header {
   padding: 0rem;
   border-radius: $border-radius;
   position: absolute;
-  width: 95%;
+  width: 95.7%;
   align-self: center;
-  top: 3rem;
+  top: 2.5rem;
   z-index: 3;
   transition: background-color 0.3s ease-in-out;
 }
@@ -114,12 +102,10 @@ header {
   font-size: $font-size-medium;
   text-decoration: none;
   transition: color 0.3s;
+  &:hover {
+    color: $text-color;
+  }
 }
-
-.header-nav:hover {
-  color: $primary-color;
-}
-
 .header-btn-adaptive {
   display: none;
 }
@@ -139,11 +125,11 @@ header {
     color: $secondary-color !important;
     border-color: $text-color !important;
   }
-  // &:focus{
-  //   background-color: $text-color;
-  //   color: $secondary-color;
-  //   border-color: $text-color;
-  // }
+  &:focus {
+    background-color: $text-color;
+    color: $secondary-color;
+    border-color: $text-color;
+  }
 }
 .scrolled-header {
   background-color: #f0f0f0;

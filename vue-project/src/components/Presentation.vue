@@ -45,7 +45,7 @@ export default {
 .pres-main {
   @include flex-column;
   background-color: $background-color;
-  padding: $padding-medium $padding-large;
+  padding: $padding-medium;
   border-radius: $border-radius;
   gap: $padding-medium;
 }
@@ -66,7 +66,7 @@ export default {
   border-radius: $border-radius-full;
   color: $secondary-color;
   &:hover {
-    background-color: #1976d2;
+    background-color: $text-color;
   }
 }
 
