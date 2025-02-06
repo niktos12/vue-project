@@ -258,7 +258,7 @@ footer {
 }
 @include screen-between(300px, 767px) {
   footer {
-    padding: $padding-medium;
+    padding: $padding-large;
     flex-direction: column;
     gap: 3rem;
   }

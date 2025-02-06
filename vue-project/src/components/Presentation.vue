@@ -121,12 +121,12 @@ export default {
   }
   .pres {
     @include flex-column;
-    gap: $padding-medium;
+    gap: 3rem;
     padding-top: 6rem;
   }
   .pres-main {
     padding-top: $padding-xlarge;
-    padding: $padding-small / 2;
+    padding: 0.5rem;
   }
 
   .btn-pres {

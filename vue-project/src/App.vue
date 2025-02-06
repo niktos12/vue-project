@@ -64,5 +64,8 @@ html {
   #app {
     padding: 0.5rem;
   }
+  main{
+    gap: 0.5rem;
+  }
 }
 </style>

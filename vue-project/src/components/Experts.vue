@@ -263,7 +263,7 @@ export default {
     width: 100%;
     height: auto;
     max-width: none;
-    padding: $padding-medium;
+    padding: $padding-large;
   }
 
   .swiper-slide {

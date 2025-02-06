@@ -167,7 +167,7 @@ export default {
   .why-tg-main {
     @include flex-column;
     padding-top: 0 !important;
-    padding: $padding-medium;
+    padding: $padding-large;
     gap: $padding-medium;
   }
 
